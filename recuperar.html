@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - SGG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button id="btn-tema" onclick="cambiarTema()">Cambiar Modo</button>
+
+    <div class="formulario">
+        <h2>Recuperar Contraseña</h2>
+
+        <form onsubmit="cambiarContrasena(event)">
+
+            <label for="email">Correo electrónico registrado</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+
+            <label for="nuevaPassword">Nueva Contraseña</label>
+            <div class="contenedor-password">
+                <input type="password" id="nuevaPassword" placeholder="Nueva Contraseña" required>
+                <button type="button" class="btn-ver-password" onclick="mostrarOcultarPassword('nuevaPassword', this)">Mostrar</button>
+            </div>
+
+            <label for="repetirNuevaPassword">Repetir Nueva Contraseña</label>
+            <div class="contenedor-password">
+                <input type="password" id="repetirNuevaPassword" placeholder="Repetir Nueva Contraseña" required>
+                <button type="button" class="btn-ver-password" onclick="mostrarOcultarPassword('repetirNuevaPassword', this)">Mostrar</button>
+            </div>
+
+            <br>
+
+            <button type="submit" id="btn-recuperar">Actualizar Contraseña</button>
+
+            <p id="mensaje"></p>
+
+        </form>
+
+        <div class="navegacion">
+            <a href="index.html">Volver al Login</a>
+            <a href="registro.html">¿No tenés cuenta? Registrate</a>
+        </div>
+    </div>
+
+    <script src="js/recuperar.js"></script>
+</body>
+</html>
