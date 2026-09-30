@@ -1,137 +1,71 @@
-:root {
-    --bg-color: #f4f6f9;
-    --text-color: #333333;
-    --card-bg: #ffffff;
-    --primary-color: #0066cc;
-    --primary-hover: #004b99;
-    --border-color: #cccccc;
-}
-
-body.modo-oscuro {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
-    --primary-color: #3700b3;
-    --primary-hover: #6200ee;
-    --border-color: #444444;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
+/* Estilos para el Dashboard */
+.header-dashboard {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#btn-tema {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.formulario {
+    padding: 15px 30px;
     background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
     width: 100%;
-    max-width: 400px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-border-box;
 }
 
-form {
+.contenedor-dashboard {
+    margin-top: 100px;
+    width: 90%;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-label {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input {
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+.tarjeta-resumen {
     background-color: var(--card-bg);
-    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
 }
 
-.contenedor-password {
-    display: flex;
-    gap: 5px;
+.tarjeta-resumen p {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0 0 0;
 }
 
-.contenedor-password input {
-    flex: 1;
+.seccion-tabla {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.btn-ver-password {
+.tabla-gastos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-gastos th, .tabla-gastos td {
+    border: 1px solid var(--border-color);
     padding: 10px;
-    cursor: pointer;
+    text-align: left;
 }
 
-button[type="submit"] {
-    margin-top: 15px;
-    padding: 12px;
+.tabla-gastos th {
     background-color: var(--primary-color);
     color: white;
+}
+
+.btn-logout {
+    background-color: #d9534f;
+    color: white;
     border: none;
+    padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-button[type="submit"]:hover:not(:disabled) {
-    background-color: var(--primary-hover);
-}
-
-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-.requisitos-password {
-    list-style: none;
-    padding: 0;
-    font-size: 0.85em;
-    margin-top: 10px;
-}
-
-.requisito-no {
-    color: red;
-}
-
-.requisito-cumplido {
-    color: green;
-}
-
-.navegacion {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-}
-
-.navegacion a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.navegacion a:hover {
-    text-decoration: underline;
-}
-
-#mensaje {
-    margin-top: 15px;
-    font-weight: bold;
-    text-align: center;
 }
