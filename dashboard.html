@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gastos - SGG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-dashboard">
+        <h1>Gestión de Gastos (SGG)</h1>
+        <div>
+            <span id="nombre-usuario"></span>
+            <button id="btn-tema" onclick="cambiarTema()">Modo</button>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main class="contenedor-dashboard">
+        <!-- Panel Resumen (RF-09) -->
+        <section class="tarjeta-resumen">
+            <h2>Total Gastado</h2>
+            <p id="total-gastado">$0.00</p>
+        </section>
+
+        <!-- Formulario de Carga / Edición (RF-05 y RF-07) -->
+        <section class="formulario">
+            <h3 id="titulo-form">Registrar Nuevo Gasto</h3>
+            <form id="form-gasto" onsubmit="guardarGasto(event)">
+                <input type="hidden" id="gasto-id">
+                
+                <label for="monto">Monto ($):</label>
+                <input type="number" id="monto" step="0.01" min="0.01" placeholder="Ej: 1500.50" required>
+
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" required>
+
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Alimentación">Alimentación</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Ocio">Ocio</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" placeholder="Ej: Compra de supermercado" required>
+
+                <button type="submit" id="btn-guardar">Guardar Gasto</button>
+                <button type="button" id="btn-cancelar" onclick="limpiarFormulario()" style="display:none; background-color: #666;">Cancelar Edición</button>
+            </form>
+            <p id="mensaje-error" style="color:red;"></p>
+        </section>
+
+        <!-- Historial Dinámico (RF-06) -->
+        <section class="seccion-tabla">
+            <h3>Historial de Gastos</h3>
+            <table class="tabla-gastos">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                    <!-- Se completa dinámicamente con JS -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/gastos.js"></script>
+</body>
+</html>
