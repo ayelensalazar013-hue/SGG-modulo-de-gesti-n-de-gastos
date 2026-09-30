@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - SGG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button id="btn-tema" onclick="cambiarTema()">Cambiar Modo</button>
+
+    <div class="formulario">
+        <h2>Crear Cuenta</h2>
+
+        <form onsubmit="registrarUsuario(event)">
+
+            <label for="nombre">Nombre/s</label>
+            <input type="text" id="nombre" placeholder="Nombre/s" required>
+
+            <label for="apellido">Apellido/s</label>
+            <input type="text" id="apellido" placeholder="Apellido/s" required>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechaNacimiento" required>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+
+            <label for="usuario">Nombre de Usuario</label>
+            <input type="text" id="usuario" placeholder="Nombre de Usuario" required>
+
+            <label for="password">Contraseña</label>
+            <div class="contenedor-password">
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="button" class="btn-ver-password" onclick="mostrarOcultarPassword('password', this)">Mostrar</button>
+            </div>
+
+            <ul class="requisitos-password">
+                <li id="req-longitud" class="requisito-no">✗ Mínimo 8 caracteres</li>
+                <li id="req-mayuscula" class="requisito-no">✗ Al menos 1 letra mayúscula</li>
+                <li id="req-minuscula" class="requisito-no">✗ Al menos 1 letra minúscula</li>
+                <li id="req-numero" class="requisito-no">✗ Al menos 1 número</li>
+                <li id="req-especial" class="requisito-no">✗ Al menos 1 carácter especial</li>
+            </ul>
+
+            <label for="repetirPassword">Repetir Contraseña</label>
+            <div class="contenedor-password">
+                <input type="password" id="repetirPassword" placeholder="Repetir Contraseña" required>
+                <button type="button" class="btn-ver-password" onclick="mostrarOcultarPassword('repetirPassword', this)">Mostrar</button>
+            </div>
+
+            <br>
+
+            <button type="submit" id="btn-registrar" disabled>Registrarse</button>
+
+            <p id="mensaje"></p>
+
+        </form>
+
+        <div class="navegacion">
+            <a href="index.html">Volver al Login</a>
+            <a href="recuperar.html">Recuperar contraseña</a>
+        </div>
+
+    </div>
+
+    <script src="js/registro.js"></script>
+</body>
+</html>
