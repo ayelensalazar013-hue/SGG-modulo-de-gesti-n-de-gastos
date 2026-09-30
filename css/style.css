@@ -1,0 +1,137 @@
+:root {
+    --bg-color: #f4f6f9;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --primary-color: #0066cc;
+    --primary-hover: #004b99;
+    --border-color: #cccccc;
+}
+
+body.modo-oscuro {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #3700b3;
+    --primary-hover: #6200ee;
+    --border-color: #444444;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btn-tema {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.formulario {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.contenedor-password {
+    display: flex;
+    gap: 5px;
+}
+
+.contenedor-password input {
+    flex: 1;
+}
+
+.btn-ver-password {
+    padding: 10px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.requisitos-password {
+    list-style: none;
+    padding: 0;
+    font-size: 0.85em;
+    margin-top: 10px;
+}
+
+.requisito-no {
+    color: red;
+}
+
+.requisito-cumplido {
+    color: green;
+}
+
+.navegacion {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.navegacion a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
